@@ -32,6 +32,15 @@ while (i < len(arr)):
         j -= 1
     i += 1
 
+##############################
+    
+fig, ax = plt.subplots()
+ax.bar(np.arange(0, len(arr), 1),arr, align="edge", width=0.8)
+
+
+
+
+
 
 
 
