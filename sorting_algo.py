@@ -10,7 +10,10 @@ plt.rcParams["font.size"] = 16
 
 N = 30
 arr = np.round(np.linspace(0,1000,N), 0)
+np.random.seed(0)
 np.random.shuffle(arr) 
+
+
 
 fig, ax = plt.subplots()
 ax.bar(np.arange(0, len(arr), 1),arr, align="edge", width=0.8)
