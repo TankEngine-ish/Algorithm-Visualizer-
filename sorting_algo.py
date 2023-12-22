@@ -1,4 +1,5 @@
 #%%
+import time 
 import scipy as sp
 import numpy as np
 import matplotlib.pyplot as plt
@@ -24,6 +25,7 @@ ax.bar(np.arange(0, len(arr), 1),arr, align="edge", width=0.8)
 ##############################
 
 sorter = "Insertion"
+t0 = time.perf_counter()
 
 i = 1
 while (i < len(arr)):
@@ -34,6 +36,8 @@ while (i < len(arr)):
         arr[j] = temp
         j -= 1
     i += 1
+
+dt = time.perf_counter() - t0
 
 ##############################
     
