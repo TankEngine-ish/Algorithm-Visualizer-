@@ -40,6 +40,9 @@ while (i < len(arr)):
 dt = time.perf_counter() - t0
 
 ##############################
+
+print(f"---------- {sorter} Sort ----------")
+print(f"Array Sorted in {dt*1E3:.1f} ms")
     
 fig, ax = plt.subplots()
 ax.bar(np.arange(0, len(arr), 1),arr, align="edge", width=0.8)
