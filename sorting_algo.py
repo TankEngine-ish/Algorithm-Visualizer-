@@ -46,17 +46,16 @@ ax.bar(np.arange(0, len(arr), 1),arr, align="edge", width=0.8)
 
 
 ##############################
-####### Quick Sort #######
+######### Quick Sort #########
 ##############################
 
 sorter = "Quick"
 
-
 def quicksort(A, lo, hi):
     if lo < hi:
         p = partition(A, lo, hi)
-        quicksort(A, lo, hi)
-        quicksort(A, p+1, hi)
+        quicksort(A, lo, p - 1)
+        quicksort(A, p + 1, hi)
 
 
 def partition(A, lo, hi):
@@ -72,4 +71,16 @@ def partition(A, lo, hi):
     A[i] = A[hi]
     A[hi] = temp
     return i
+
+t0 = time.perf_counter()
+quicksort(arr, 0, len(arr)-1)
+dt = time.perf_counter() - t0
+
 ##############################
+
+
+print(f"---------- {sorter} Sort ----------")
+print(f"Array Sorted in {dt*1E3:.1f} ms")
+    
+fig, ax = plt.subplots()
+ax.bar(np.arange(0, len(arr), 1),arr, align="edge", width=0.8)
