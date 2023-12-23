@@ -15,6 +15,8 @@ np.random.shuffle(arr)
 
 fig, ax = plt.subplots()
 ax.bar(np.arange(0, len(arr), 1),arr, align="edge", width=0.8)
+ax.set_xlim([0, N])
+ax.set(xlabel="Index", ylabel="Value", title = "Unsorted array")
 
 
 ##############################
@@ -84,3 +86,6 @@ print(f"Array Sorted in {dt*1E3:.1f} ms")
     
 fig, ax = plt.subplots()
 ax.bar(np.arange(0, len(arr), 1),arr, align="edge", width=0.8)
+ax.bar(np.arange(0, len(arr), 1),arr, align="edge", width=0.8)
+ax.set_xlim([0, N])
+ax.set(xlabel="Index", ylabel="Value", title = f"{sorter} sort")
