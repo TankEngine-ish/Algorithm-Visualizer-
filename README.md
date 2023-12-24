@@ -11,3 +11,13 @@ The first algorithm that was implemented was insertion sort.
 
 
 ![Alt text](<Images/Screenshot from 2023-12-16 00-03-51.png>)
+
+
+## Quick Sort
+
+The second algorithm I implemented was quick sort.
+You can also see the time it took to sort (0.1 ms) with the help
+of the python's time library.
+
+
+![Alt text](<Images/Screenshot from 2023-12-23 22-12-33.png>)
