@@ -24,6 +24,7 @@ However, if the adjacent value to the left of the current value is lesser, then 
 The second algorithm I implemented was quick sort.
 It's a recursive, divide-and-conquer algorithm that is ranked as fastest in its class. 
 It has an average time complexity of O (n log n ), which compared to its peers is pretty fast. 
+Quick sort creates two empty arrays to hold elements less than the pivot value and elements greater than the pivot value, and then recursively sort the sub arrays. There are two basic operations in the algorithm, swapping items in place and partitioning a section of the array.
 
 You can also see the time it took to sort (0.1 ms) with the help
 of the python's time library.
