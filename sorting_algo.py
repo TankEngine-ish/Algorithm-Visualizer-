@@ -1,4 +1,5 @@
 #%%
+
 import time 
 import scipy as sp
 import numpy as np
@@ -32,14 +33,14 @@ class TrackedArray():
 
     def __getitem__(self, key):
         self.track(key, "get")
-        return self.arr._getitem_(key)
+        return self.arr.__getitem__(key)
     
     def __setitem__(self, key, value):
-        self.arr._setitem_(key, value)
+        self.arr.__setitem__(key, value)
         self.track(key, "set")
 
     def __len__(self):
-        return self.arr._len_()
+        return self.arr.__len__()
     
                      
 
@@ -138,3 +139,5 @@ def update(frame):
 
 ani = FuncAnimation(fig, update, frames=range(len(arr.full_copies)),
                         blit=True, interval=1000./FPS, repeat=False)
+
+plt.show()
