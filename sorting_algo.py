@@ -1,5 +1,4 @@
 #%%
-
 import time 
 import scipy as sp
 import numpy as np
@@ -130,12 +129,14 @@ fig, ax = plt.subplots()
 container = ax.bar(np.arange(0, len(arr), 1),arr, align="edge", width=0.8)
 ax.set_xlim([0, N])
 ax.set(xlabel="Index", ylabel="Value", title = f"{sorter} sort")
+txt = ax.text(0,1000, "")
 
 def update(frame):
+    txt.set_text(f" Accesses = {frame}")
     for (rectangle, height) in zip(container.patches, arr.full_copies[frame]):
         rectangle.set_height(height)
         rectangle.set_color("#1f77b4")
-    return (*container,)
+    return (*container,txt)
 
 ani = FuncAnimation(fig, update, frames=range(len(arr.full_copies)),
                         blit=True, interval=1000./FPS, repeat=False)
