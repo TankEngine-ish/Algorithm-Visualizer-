@@ -4,6 +4,9 @@ For my very first project in Python I decided to go for an
 algorithm visualizer. 
 
 It was all done in an an Anaconda environment along with Jupyter for the plotting charts inside VSCode.
+In the first part of the project I created some simple .png files with the unsorted and then sorted arrays.
+Then, in the second part of the project I animated the sorting process but also added the number of times the arrays were accessed.
+You can check the results below.
 
 ## Insertion Sort
 
@@ -13,7 +16,7 @@ It involves the sorted list created based on an iterative comparison of each ele
 
 An index pointing at the current element indicates the position of the sort. At the beginning of the sort (index=0), the current value is compared to the adjacent value to the left. If the value is greater than the current value, no modifications are made to the list; this is also the case if the adjacent value and the current value are the same numbers. 
 
-However, if the adjacent value to the left of the current value is lesser, then the adjacent value position is moved to the left, and only stops moving to the left if the value to the left of it is lesser.Despite its simplicity, Insertion sort is quite inefficient compared to quicksort, merge sort etc.
+However, if the adjacent value to the left of the current value is lesser, then the adjacent value position is moved to the left, and only stops moving to the left if the value to the left of it is lesser. Despite its simplicity, Insertion sort is quite inefficient compared to quicksort, merge sort etc.
 
 
 ![Alt text](<Images/Screenshot from 2023-12-16 00-03-51.png>)

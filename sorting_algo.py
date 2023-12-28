@@ -5,6 +5,35 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
+
+class TrackedArray():
+    
+    def _init_(self, arr):
+        self.arr = np.copy(arr)
+        self.reset()
+
+    def reset(self):
+        self.indices = []
+        self.values = []
+        self.access_type = []  # whether it's 'get' or 'set' 
+        self.full_copies = []
+
+    def _getitem_(self, key):
+        self.track(key, "get")
+        return self.arr._getitem_(key)
+    
+    def _setitem_(self, key, value):
+        self.arr._setitem_(key, value)
+        self.track(key, "set")
+
+    def _len_(self):
+        return self.arr._len_()
+    
+
+
+
+                        
+
 plt.rcParams["figure.figsize"] = (12, 8)
 plt.rcParams["font.size"] = 16
 
