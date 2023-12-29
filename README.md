@@ -26,6 +26,10 @@ However, if the adjacent value to the left of the current value is lesser, then 
 
 ![Alt text](<Images/Screenshot from 2023-12-16 00-03-51.png>)
 
+This is the second part of the project where I actualy animated the sorting process.
+You can see how slow insertion sort is.
+
+![insertion](./Images/insertion.gif)
 
 ## Quick Sort
 
