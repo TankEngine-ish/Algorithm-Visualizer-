@@ -3,10 +3,15 @@
 For my very first project in Python I decided to go for an
 algorithm visualizer. 
 
-It was all done in an an Anaconda environment along with Jupyter for the plotting charts inside VSCode.
+It was all done in an an Anaconda environment along with Jupyter and IPyWidgets for the plotting charts inside VSCode.
 In the first part of the project I created some simple .png files with the unsorted and then sorted arrays.
 Then, in the second part of the project I animated the sorting process but also added the number of times the arrays were accessed.
+
+The number of elements in the arrays can be easily changed inside the python code by swapping the value of 'N'
+with any anumber. I chose 30 elements. In the future I might add more popular algorithms to this project.
 You can check the results below.
+
+
 
 ## Insertion Sort
 
@@ -34,3 +39,9 @@ of the python's time library.
 
 
 ![Alt text](<Images/Screenshot from 2023-12-23 22-12-33.png>)
+
+
+This is the second part of the project where I actualy animated the sorting process.
+You can see how much faster quicksort is than insertion.
+
+![quicksort] (https://media.giphy.com/media/dkI1gDMwWIS4IJlgr0/giphy.gif)
