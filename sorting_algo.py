@@ -41,7 +41,7 @@ class TrackedArray():
     def __len__(self):
         return self.arr.__len__()
     
-                     
+
 
 plt.rcParams["figure.figsize"] = (12, 8)
 plt.rcParams["font.size"] = 16
