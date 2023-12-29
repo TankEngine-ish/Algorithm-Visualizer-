@@ -44,4 +44,4 @@ of the python's time library.
 This is the second part of the project where I actualy animated the sorting process.
 You can see how much faster quicksort is than insertion.
 
-![quicksort](https://media.giphy.com/media/dkI1gDMwWIS4IJlgr0/giphy.gif)
+![quicksort](<img src="/home/Desktop/Stuff/quicksort.gif" width="250" height="250"/>)
