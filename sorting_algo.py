@@ -64,60 +64,60 @@ arr = TrackedArray(arr)
 ####### Insertion Sort #######
 ##############################
 
-sorter = "Insertion"
-t0 = time.perf_counter()
+# sorter = "Insertion"
+# t0 = time.perf_counter()
 
-i = 1
-while (i < len(arr)):
-    j = i
-    while ((j > 0) and (arr[j-1] > arr[j])):
-        temp = arr[j-1]
-        arr[j-1] = arr[j]
-        arr[j] = temp
-        j -= 1
-    i += 1
+# i = 1
+# while (i < len(arr)):
+#     j = i
+#     while ((j > 0) and (arr[j-1] > arr[j])):
+#         temp = arr[j-1]
+#         arr[j-1] = arr[j]
+#         arr[j] = temp
+#         j -= 1
+#     i += 1
 
-dt = time.perf_counter() - t0
+# dt = time.perf_counter() - t0
 
-##############################
+# ##############################
 
-print(f"---------- {sorter} Sort ----------")
-print(f"Array Sorted in {dt*1E3:.1f} ms")
+# print(f"---------- {sorter} Sort ----------")
+# print(f"Array Sorted in {dt*1E3:.1f} ms")
     
-fig, ax = plt.subplots()
-ax.bar(np.arange(0, len(arr), 1),arr, align="edge", width=0.8)
+# fig, ax = plt.subplots()
+# ax.bar(np.arange(0, len(arr), 1),arr, align="edge", width=0.8)
 
 
 ##############################
 ######### Quick Sort #########
 ##############################
 
-# sorter = "Quick"
+sorter = "Quick"
 
-# def quicksort(A, lo, hi):
-#     if lo < hi:
-#         p = partition(A, lo, hi)
-#         quicksort(A, lo, p - 1)
-#         quicksort(A, p + 1, hi)
+def quicksort(A, lo, hi):
+    if lo < hi:
+        p = partition(A, lo, hi)
+        quicksort(A, lo, p - 1)
+        quicksort(A, p + 1, hi)
 
 
-# def partition(A, lo, hi):
-#     pivot = A[hi]
-#     i = lo
-#     for j in range(lo, hi):
-#         if A[j] < pivot:
-#             temp = A[i]
-#             A[i] = A[j]
-#             A[j] = temp
-#             i += 1
-#     temp = A[i]
-#     A[i] = A[hi]
-#     A[hi] = temp
-#     return i
+def partition(A, lo, hi):
+    pivot = A[hi]
+    i = lo
+    for j in range(lo, hi):
+        if A[j] < pivot:
+            temp = A[i]
+            A[i] = A[j]
+            A[j] = temp
+            i += 1
+    temp = A[i]
+    A[i] = A[hi]
+    A[hi] = temp
+    return i
 
-# t0 = time.perf_counter()
-# quicksort(arr, 0, len(arr)-1)
-# dt = time.perf_counter() - t0
+t0 = time.perf_counter()
+quicksort(arr, 0, len(arr)-1)
+dt = time.perf_counter() - t0
 
 ##############################
 
@@ -136,7 +136,16 @@ def update(frame):
     for (rectangle, height) in zip(container.patches, arr.full_copies[frame]):
         rectangle.set_height(height)
         rectangle.set_color("#1f77b4")
-    return (*container,txt)
+
+
+    idx, op = arr.GetActivity(frame)
+    if op == "get":
+        container.patches[idx].set_color("magenta")
+    elif op == "set":
+        container.patches[idx].set_color("red")
+        #this is the color representation of the current array element being accessed 
+
+    return (*container, txt)
 
 ani = FuncAnimation(fig, update, frames=range(len(arr.full_copies)),
                         blit=True, interval=1000./FPS, repeat=False)
