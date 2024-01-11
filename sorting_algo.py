@@ -92,32 +92,32 @@ dt = time.perf_counter() - t0
 ######### Quick Sort #########
 ##############################
 
-# sorter = "Quick"
+sorter = "Quick"
 
-# def quicksort(A, lo, hi):
-#     if lo < hi:
-#         p = partition(A, lo, hi)
-#         quicksort(A, lo, p - 1)
-#         quicksort(A, p + 1, hi)
+def quicksort(A, lo, hi):
+    if lo < hi:
+        p = partition(A, lo, hi)
+        quicksort(A, lo, p - 1)
+        quicksort(A, p + 1, hi)
 
 
-# def partition(A, lo, hi):
-#     pivot = A[hi]
-#     i = lo
-#     for j in range(lo, hi):
-#         if A[j] < pivot:
-#             temp = A[i]
-#             A[i] = A[j]
-#             A[j] = temp
-#             i += 1
-#     temp = A[i]
-#     A[i] = A[hi]
-#     A[hi] = temp
-#     return i
+def partition(A, lo, hi):
+    pivot = A[hi]
+    i = lo
+    for j in range(lo, hi):
+        if A[j] < pivot:
+            temp = A[i]
+            A[i] = A[j]
+            A[j] = temp
+            i += 1
+    temp = A[i]
+    A[i] = A[hi]
+    A[hi] = temp
+    return i
 
-# t0 = time.perf_counter()
-# quicksort(arr, 0, len(arr)-1)
-# dt = time.perf_counter() - t0
+t0 = time.perf_counter()
+quicksort(arr, 0, len(arr)-1)
+dt = time.perf_counter() - t0
 
 ##############################
 
